@@ -3,8 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styles: ['h1 {color: rgb(12, 12, 119);}']
+
 })
 export class AppComponent {
-  title = 'usb-Projects-staus';
+  pageTitle = 'USB Projects Status!!!';
 }

@@ -1,0 +1,66 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3>Enter Yours Projest Status</h3>
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>      
+
+          <div class="form-group" [class.has-error]="projectName.invalid && projectName.touched">
+            <label for="projectName" class="control-label">Project Name</label>
+            <input id="projectName" required type="text" class="form-control" name="projectName"
+                   [(ngModel)]="projectStaus.projectName" #projectName="ngModel">
+            <span class="help-block" *ngIf="projectName.invalid && projectName.touched">
+              Project Name is required
+            </span>
+          </div>
+          <div class="form-group" [class.has-error]="currentStage.invalid && currentStage.touched">
+            <label for="currentStage" class="control-label">Current Stage</label>
+            <input id="currentStage" required type="text" class="form-control" name="currentStage"
+                   [(ngModel)]="projectStaus.currentStage" #currentStage="ngModel">
+            <span class="help-block" *ngIf="currentStage.invalid && currentStage.touched">
+              currentStage is required
+            </span>
+          </div>
+          <div class="form-group" [class.has-error]="delivaryEscalation.invalid && delivaryEscalation.touched">
+            <label for="delivaryEscalation" class="control-label">Delivary Escalation</label>
+            <textarea  id="delivaryEscalation" required type="textarea" class="form-control" name="delivaryEscalation"
+                   [(ngModel)]="projectStaus.delivaryEscalation" #delivaryEscalation="ngModel"></textarea>
+            <span class="help-block" *ngIf="delivaryEscalation.invalid && delivaryEscalation.touched">
+              Delivary Escalation is required
+            </span>
+          </div>
+          <div class="form-group" [class.has-error]="staus.invalid && staus.touched">
+            <label for="staus" class="control-label">Staus</label>
+            <select name="staus" [(ngModel)]="projectStaus.staus" class="form-control" name="staus" required #staus="ngModel">
+              <option value="red">Red</option>
+              <option value="amber">Amber</option>
+              <option value="green">Green</option>
+            </select>  
+            <span class="help-block" *ngIf="staus.invalid && staus.touched">
+              Staus is required
+            </span>
+          </div>
+          <div class="form-group" [class.has-error]="currentResourceCount.invalid && currentResourceCount.touched">
+            <label for="currentResourceCount" class="control-label">Current Resource Count</label>
+            <input id="currentResourceCount" required type="text" class="form-control" name="currentResourceCount"
+                   [(ngModel)]="projectStaus.currentResourceCount" #currentResourceCount="ngModel">
+            <span class="help-block" *ngIf="currentResourceCount.invalid && currentResourceCount.touched">
+              Current Resource Count is required
+            </span>
+          </div>
+          <div class="form-group" [class.has-error]="projectEndDate.invalid && projectEndDate.touched">
+            <label for="projectEndDate" class="control-label">Project Enddate</label>
+            <input id="projectEndDate" required type="date" class="form-control" name="projectEndDate"
+                   [(ngModel)]="projectStaus.projectEndDate" #projectEndDate="ngModel">
+            <span class="help-block" *ngIf="projectEndDate.invalid && projectEndDate.touched">
+              Project End Date is required
+            </span>
+          </div>        
+          <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
