@@ -1,0 +1,38 @@
+<div class="jumbotron">
+
+  <div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+    </div>
+
+
+    <div class='table-responsive'>
+      <div>
+        <table class="table" *ngIf='projectStatusList && projectStatusList.length'>
+          <thead>
+            <tr>
+
+              <th>ProjectName</th>
+              <th>CurrentStage</th>
+              <th>DelivaryEscalation</th>
+              <th>Staus</th>
+              <th>CurrentResourceCount</th>
+              <th>ProjectEndDate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let projectStatus of projectStatusList'>
+              <td>{{projectStatus.projectName}}</td>
+              <td>{{projectStatus.currentStage}}</td>
+              <td>{{projectStatus.delivaryEscalation}}</td>
+              <td>{{projectStatus.staus}}</td>
+              <td>{{projectStatus.currentResourceCount}}</td>
+              <td>{{projectStatus.projectEndDate}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

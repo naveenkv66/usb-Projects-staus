@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectStatus } from '../project-staus/ProjectStatus';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-project-staus',
   templateUrl: './project-staus.component.html',
@@ -7,7 +8,7 @@ import { ProjectStatus } from '../project-staus/ProjectStatus';
 })
 export class ProjectStausComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   projectStaus: ProjectStatus = {
     projectName: null,
     currentResourceCount: null,
@@ -33,5 +34,6 @@ export class ProjectStausComponent implements OnInit {
       projectStausList.push(this.projectStaus);
       localStorage.setItem('projectStatus', JSON.stringify(projectStausList));
     }
+    this.router.navigateByUrl('/ProjectList');
   }
 }
