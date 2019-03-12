@@ -7,18 +7,22 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { ProjectStausComponent } from './project-staus/project-staus.component';
 import { ProjectStatusListComponent } from './project-staus/project-status-list.component';
+import { ProjectStatusHomeComponent } from './project-staus/project-status-home.component';
+import { BarChartComponent } from './Chart/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectStausComponent,
-    ProjectStatusListComponent
+    ProjectStatusListComponent,
+    ProjectStatusHomeComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
-      {path: 'welcome', component: ProjectStausComponent},
+      {path: 'dashboard', component: ProjectStatusHomeComponent},
       {path: 'ProjectList', component: ProjectStatusListComponent},
       {path: '', component: ProjectStausComponent},
       {path: '**', component: ProjectStausComponent}
