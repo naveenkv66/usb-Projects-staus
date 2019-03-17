@@ -1,17 +1,13 @@
-<div class="jumbotron">
-
-  <div class="card">
-    <div class="card-header">
-      {{pageTitle}}
-    </div>
-
-
+<div class="card">
+  
+    <h2>{{pageTitle}}
+      </h2>
+  <div class="jumbotron">
     <div class='table-responsive'>
       <div>
         <table class="table" *ngIf='projectStatusList && projectStatusList.length'>
           <thead>
             <tr>
-
               <th>ProjectName</th>
               <th>CurrentStage</th>
               <th>DelivaryEscalation</th>
@@ -30,7 +26,7 @@
               <td>{{projectStatus.projectEndDate}}</td>
             </tr>
           </tbody>
-          
+
         </table>
       </div>
     </div>

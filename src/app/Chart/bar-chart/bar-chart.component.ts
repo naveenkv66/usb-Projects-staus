@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { BarChartData } from 'src/app/Chart/barChartData';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { single } from 'src/app/Chart/barChartData';
 
 
 @Component({
@@ -10,10 +11,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   styleUrls: ['./bar-chart.component.scss']
 })
 export class BarChartComponent {
-  single: BarChartData[];
+  single: any[];
   multi: any[];
 
-  view: any[] = [700, 400];
+  view: any[] = [500, 300];
 
   // options
   showXAxis = true;
@@ -21,16 +22,16 @@ export class BarChartComponent {
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Country';
+  xAxisLabel = 'Project';
   showYAxisLabel = true;
-  yAxisLabel = 'Population';
+  yAxisLabel = 'Resource Count';
 
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
 
   constructor() {
-    Object.assign(this,'single');
+    Object.assign(this, {single});
   }
 
   onSelect(event) {

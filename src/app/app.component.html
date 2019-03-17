@@ -1,16 +1,31 @@
 
 <!--The whole content below can be removed with the new code.-->
-<div>
-  <nav class='navbar navbar-expand navbar-light bg-light'>
-    <a class='navbar-brand'>{{pageTitle}}</a>
+<div class='pageOverflow'>
+  <nav class='navbar navbar-default' *ngIf = 'currentUser'>
     <ul class='nav nav-pills'>
+      <li>
+          <a class="navbar-brand brand-logo" href="#" style="width:130px">
+              <img alt="Brand" src="assets/US-Bank-Logo.png" width="100px" > 
+            </a>
+      </li>
+       
     <li><a class='nav-link' [routerLink]="['/dashboard']">Home</a></li>
     <li><a class='nav-link' [routerLink]="['/Project']">Project Status</a></li>
     <li><a class='nav-link' [routerLink]="['/ProjectList']">Project Status List</a></li>
- 
+    <li style="float:right"><a class='nav-item nav-link' (click)="logout()" >Logout</a></li>
     </ul>
   </nav>
-  <div class='container'>
+  <div class='container' >
     <router-outlet></router-outlet>
   </div>
 </div>
+<hr>
+    <div class="row footer" *ngIf = 'currentUser'>
+        <div class="col-lg-12">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="#">© 2019 USBank.</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy</a></li>
+            </ul>
+        </div>
+    </div>

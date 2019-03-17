@@ -1,3 +1,41 @@
 app-bar-chart {
     width: 50%;
-  }
+}
+
+.container {
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-default {
+    background-color: indigo;
+    border-color: #E7E7E7;
+}
+
+.brand-logo {
+    position: relative;
+    width: 170px;
+    left: 15px;
+    max-height: 70px;
+    /* height of the navbar */
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+    margin-top: auto;
+}
+
+.pageOverflow {
+    float: left;
+    width: 1000px;
+    overflow-y: auto;
+    height: 100px;
+}

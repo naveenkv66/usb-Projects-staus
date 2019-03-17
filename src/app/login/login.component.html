@@ -1,0 +1,30 @@
+
+
+<div class="login-form">
+
+  <form  name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate >
+      <h2>USB Status</h2>
+    <div class="form-group" [class.has-error]="userNameControl.invalid && userNameControl.touched">
+      <label for="userName" class="control-label">User Name</label>
+      <input id="userName" required type="text" class="form-control" name="userName"
+             [(ngModel)]="userName" #userNameControl="ngModel">
+      <span class="help-block" *ngIf="userNameControl.invalid && userNameControl.touched && userNameControl.dirty">
+        User Name is required
+      </span>
+    </div>
+    <div class="form-group" [class.has-error]="passwordControl.invalid && passwordControl.touched">
+      <label for="password" class="control-label">Password</label>
+      <input id="password" required type="password" class="form-control" name="password"
+             [(ngModel)]="password" #passwordControl="ngModel">
+      <span class="help-block" *ngIf="passwordControl.invalid && passwordControl.touched">
+        Password is required
+      </span>
+       
+      <span *ngIf='invalidCredentials' class='danger' style='color: red'>*The username or password you entered is incorrect</span>
+    </div>
+      <div class="form-group">
+          <button  class="btn btn-primary">Login</button>
+          <!-- <a [routerLink]="['/register']" class="btn btn-link">Register</a> -->
+      </div>
+  </form>
+</div>
